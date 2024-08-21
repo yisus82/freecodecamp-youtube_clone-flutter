@@ -35,7 +35,6 @@ class LoginPage extends ConsumerWidget {
               padding: const EdgeInsets.only(bottom: 55),
               child: GestureDetector(
                 onTap: () async {
-                  print('tap');
                   await ref.read(authServiceProvider).signInWithGoogle();
                 },
                 child: Image.asset(
