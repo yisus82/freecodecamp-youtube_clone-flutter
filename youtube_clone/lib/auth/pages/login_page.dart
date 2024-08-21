@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:youtube_clone/auth/repository/auth_service.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends ConsumerWidget {
   const LoginPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
         body: SafeArea(
       child: Center(
@@ -32,7 +34,10 @@ class LoginPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(bottom: 55),
               child: GestureDetector(
-                onTap: () {},
+                onTap: () async {
+                  print('tap');
+                  await ref.read(authServiceProvider).signInWithGoogle();
+                },
                 child: Image.asset(
                   'assets/images/signinwithgoogle.png',
                   height: 60,
