@@ -3,8 +3,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:youtube_clone/auth/pages/login_page.dart';
+import 'package:youtube_clone/auth/pages/username_page.dart';
 import 'package:youtube_clone/firebase_options.dart';
-import 'package:youtube_clone/home_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -29,7 +29,7 @@ class MyApp extends ConsumerWidget {
               child: CircularProgressIndicator(),
             );
           } else if (snapshot.hasData) {
-            return const HomePage();
+            return const UserNamePage();
           } else if (snapshot.hasError) {
             return const Center(
               child: Text('Something went wrong'),
