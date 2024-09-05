@@ -23,7 +23,7 @@ class LoginPage extends ConsumerWidget {
               ),
             ),
             const Text(
-              "Welcome to YouTube",
+              'Welcome to YouTube',
               style: TextStyle(
                 fontSize: 30,
                 fontWeight: FontWeight.bold,

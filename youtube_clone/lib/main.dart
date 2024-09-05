@@ -38,7 +38,7 @@ class MyApp extends ConsumerWidget {
           final user = FirebaseAuth.instance.currentUser;
           return StreamBuilder(
             stream: FirebaseFirestore.instance
-                .collection("users")
+                .collection('users')
                 .doc(user!.uid)
                 .snapshots(),
             builder: (context, snapshot) {

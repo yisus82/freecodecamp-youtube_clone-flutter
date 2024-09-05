@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 class ImageButton extends StatelessWidget {
   final VoidCallback onPressed;
   final String image;
+  final bool hasBackgroundColor;
   const ImageButton({
     super.key,
     required this.onPressed,
     required this.image,
+    this.hasBackgroundColor = false,
   });
 
   @override
@@ -17,8 +19,9 @@ class ImageButton extends StatelessWidget {
         padding: const EdgeInsets.only(left: 4, right: 4),
         child: Container(
           padding: const EdgeInsets.only(top: 7.6, bottom: 7.6),
-          decoration: const BoxDecoration(
-            borderRadius: BorderRadius.all(
+          decoration: BoxDecoration(
+            color: hasBackgroundColor ? Colors.grey.shade300 : null,
+            borderRadius: const BorderRadius.all(
               Radius.circular(12),
             ),
           ),
