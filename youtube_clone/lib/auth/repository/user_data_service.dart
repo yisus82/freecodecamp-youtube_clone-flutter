@@ -38,4 +38,10 @@ class UserDataService {
     );
     await firestore.collection('users').doc(user.userId).set(user.toMap());
   }
+
+  Future<UserModel> fetchCurrentUser() async {
+    final user = auth.currentUser;
+    final userDoc = await firestore.collection('users').doc(user!.uid).get();
+    return UserModel.fromMap(userDoc.data()!);
+  }
 }
